@@ -1,14 +1,14 @@
 import React from 'react';
-import Footer from '../components/footer';
-import Header from '../components/header';
+
+import Layout from '../components/layout';
 
 const contactPage = () => {
     return (
         <div> 
-            <Header/>
+            <Layout>
             <h1>Contact</h1>
             <p>Follow me on instagram - <a href="https://www.instagram.com/kate_sorotos/" target='_blank'>@katesorotos</a></p>
-            <Footer/>
+            </Layout>
         </div>
     )
 }
