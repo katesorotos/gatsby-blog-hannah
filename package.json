@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "env-cmd .env.development gatsby develop",
+    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -18,7 +18,8 @@
     "gatsby-plugin-sass": "^2.3.1",
     "gatsby-plugin-sharp": "^2.6.2",
     "gatsby-remark-images": "^3.0.10",
-    "gatsby-remark-relative-images": "^0.2.2",
+    "gatsby-remark-relative-images": "^0.3.0",
+    "gatsby-source-contentful": "^2.3.5",
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-remark": "^2.3.8",
     "node-sass": "^4.14.1",
@@ -26,6 +27,8 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
     "env-cmd": "^10.1.0",
     "prettier": "2.0.5"
   },
