@@ -16,7 +16,6 @@ import Head from '../components/head';
         }
     }
 `
-
 const Blog = (props) => {
     return (
         <Layout>
