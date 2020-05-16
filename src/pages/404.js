@@ -3,13 +3,16 @@ import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import Head from '../components/head';
+import PageWrapper  from '../styles/pageWrapper';
 
 const NotFound = () => {
     return (
         <Layout>
             <Head title="404"/>
+            <PageWrapper>
             <header>Page not found</header>
             <p><Link to='/'>Home</Link></p>
+            </PageWrapper>
         </Layout>
     )
 }

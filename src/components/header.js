@@ -51,7 +51,7 @@ return (
                 </li>
                 <li>
                 <Link activeClassName="activePage" to="/about">
-                    About
+                    About Me
                 </Link>
                 </li>
                 <li>

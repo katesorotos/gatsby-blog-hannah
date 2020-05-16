@@ -2,31 +2,30 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`
 });
 
+const dotenv = require('dotenv')
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config()
+}
+
 module.exports = {
   siteMetadata: {
     title: 'Hannah May',
-    author: 'Kate Sorotos'
+    owner: 'Hannah May Baldwin',
+    developer: 'Kate Sorotos',
+    social: {
+      instagram: 'hannahmaybaldwin',
+    },
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'Hannah May Baldwin',
-        short_name: 'HMBaldwin',
-        start_url: '/',
-        background_color: '#000',
-        theme_color: '#353535',
-        lang: 'en',
-        display: 'standalone',
-        icon: path.join(__dirname, 'src', 'images', 'favicon.png'), // This path is relative to the root of the site.
-      },
-    },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        spaceId: 'dc5igw0b41un',
-        accessToken: 'QPY7UFhiEnVDgjRmvfpuUAL-1BdvVXG-57DI8Za82CQ',
+        spaceId: 'gh2sg2ozxgsh',
+        accessToken: 'zOUiOTrfdR4IrosdRndCmsSy5bylZ-u4414Whv8t7b0',
+        // acessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     'gatsby-plugin-sass',
@@ -34,10 +33,9 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'src',
-        path: `${__dirname}/src/`
+        path: `${__dirname}/src`
       }
     },
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -52,6 +50,7 @@ module.exports = {
           }
         ]
       }
-    }
-  ]
+    },
+    '@contentful/gatsby-transformer-contentful-richtext',
+  ],
 }
