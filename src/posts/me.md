@@ -5,7 +5,7 @@ name: "Hannah May Baldwin"
 email: "email"
 phone: "phoneNumber"
 url: "websiteURL"
-miniBio: "A freelance journalist etc etc."
+miniBio: "minibio"
 portrait: ""
 handle: "@hannahmaybaldwin"
 username: "hannahmaybaldwin"
@@ -14,5 +14,6 @@ facebookURL: "facebookURL"
 linkedinURL: "linkedinURL"
 ---
 
+This is where an about me section will go. <br/>
+Waiting for content.
 
-This is where an about me section will go. 

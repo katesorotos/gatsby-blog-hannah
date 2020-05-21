@@ -1,17 +1,13 @@
-import React from 'react';
+import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
+import blogStyles from '../pages/blog.module.scss';
 import styled from 'styled-components';
-
-import Layout from '../components/layout';
-import blogStyles from './blog.module.scss';
-import Head from '../components/head';
-import BlogPageWrapper from '../styles/blog/blogPageSyles'; 
 
 const Post = styled.div`
 display: flex;
 `
 
-const BlogPage = () => {
+const RecentPosts = () => {
 
     const data = useStaticQuery(graphql`
     query {
@@ -42,12 +38,8 @@ const BlogPage = () => {
         `)
 
      return (
+
         <div> 
-            <Layout>
-                <BlogPageWrapper>
-                <Head title="Blog"/>
-            <h1>Blog Posts</h1>
-            <div> 
             <ol className={blogStyles.posts}>
                 {data.allContentfulPost.edges.map((edge) => {
                         return (
@@ -74,52 +66,8 @@ const BlogPage = () => {
                 }
             </ol>
         </div>
-            </BlogPageWrapper>
-            </Layout>
-        </div>
     )
 }  
 
-export default BlogPage; 
+export default RecentPosts; 
 
-/* MARKDOWN 
-
-const data = useStaticQuery(graphql`
-        query {
-            allMarkdownRemark {
-                edges {
-                node {
-                    frontmatter {
-                        title
-                        date
-                        }
-                    fields {
-                        slug
-                    }
-                }
-            }
-        }
-    }
-`)
-
-return (
-    <div> 
-        <Layout>
-        <h1>Blog</h1>
-        <ol className={blogStyles.posts}>
-            {data.allMarkdownRemark.edges.map((edge) => {
-                    return (
-                        <li className={blogStyles.post}> 
-                            <Link to={`/blog/${edge.node.fields.slug}`}>
-                            <h2>{edge.node.frontmatter.title}</h2>
-                            <p>{edge.node.frontmatter.date}</p>
-                            </Link>
-                        </li>
-                    )
-                })   
-            }
-        </ol>
-        </Layout>
-    </div>
-)
-} */

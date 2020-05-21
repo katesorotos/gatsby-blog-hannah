@@ -6,6 +6,16 @@ const BlogPostPageWrapper = styled.div`
   background-color: ${props => props.theme.bgColor};
   width: 100%;
 
+  .postImages {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .prevNext {
+    color: #343a40;
+  }
+
   h1 {
     font-size: 3rem;
   }

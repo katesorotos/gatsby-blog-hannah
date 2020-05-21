@@ -45,9 +45,21 @@ module.exports.createPages = async ({ graphql, actions }) => {
     const blogTemplate = path.resolve('./src/templates/blog.js')
     const res = await graphql(`
         query {
-            allContentfulPost {
+            allContentfulPost (
+                sort: {
+                    order: DESC, 
+                    fields: publishedDate
+                    }) { 
                 edges {
                     node {
+                        slug
+                        title
+                    }
+                    next {
+                        slug
+                        title
+                    }
+                    previous {
                         slug
                         title
                     }
@@ -59,25 +71,27 @@ module.exports.createPages = async ({ graphql, actions }) => {
     const posts = res.data.allContentfulPost.edges
 
     posts.forEach((post, index) => {
-        const previous = index === posts.length - 1 ? null : posts[index + 1].node
-        const next = index === 0 ? null : posts[index - 1].node
 
-    res.data.allContentfulPost.edges.forEach((edge) => {
+        
+        const previous = index === 0 ? null : posts[index - 1].node
+        const next = index === posts.length - 1 ? null : posts[index + 1].node
+
+    res.data.allContentfulPost.edges.forEach((edge, index,  next, previous) => {
         createPage({
             component: blogTemplate,
             path: edge.node.slug,
             context: {
                 slug: edge.node.slug,
-                previous,
-                next,
-            }
+                next: index === res.length - 1 ? null : posts[index + 1],
+                previous: index === 0 ? null : posts[index - 1]
+                }
+            })
         })
     })
-})
 }
 
 
-/* ---- MARKDOWN
+ /* ---- MARKDOWN
 
  
 module.exports.onCreateNode = ({node, actions}) => {
@@ -118,4 +132,5 @@ module.exports.onCreateNode = ({node, actions}) => {
             }
         })
     })
-}  */
+} 
+ */

@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby'
 
-import footerStyles from './footer.module.scss';
+import FooterWrapper from '../styles/layout/footerStyles';
 
 const Footer = () => {
     const data = useStaticQuery(graphql`
@@ -9,6 +9,7 @@ const Footer = () => {
             site {
                 siteMetadata {
                     developer
+                    email
                 }
             }
         }
@@ -16,9 +17,23 @@ const Footer = () => {
     `)
 
     return (
-        <footer className={footerStyles.footer}>
-            <p>© 2020 - {data.site.siteMetadata.developer}</p>
-        </footer>
+        <FooterWrapper>
+            <footer>
+            <span>Want to collaborate?{' '}
+      </span>
+
+      <span>
+        Let's connect! <br />
+        Email me: <a href="/">{data.site.siteMetadata.email}</a>
+        <br />
+        or{' '}
+        <span>
+          Follow me: <a href="https://www.instagram.com/hannahmaybaldwin/">@hannahmaybaldwin</a>
+        </span>
+      </span>
+      <small>&copy;{new Date().getFullYear()} - {data.site.siteMetadata.developer}</small>
+         </footer> 
+        </FooterWrapper>
     )
 }
 

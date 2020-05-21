@@ -12,6 +12,7 @@ module.exports = {
     title: 'Hannah May',
     owner: 'Hannah May Baldwin',
     developer: 'Kate Sorotos',
+    email: 'hannahmaybaldwin@email.com',
     social: {
       instagram: 'hannahmaybaldwin',
     },
@@ -20,6 +21,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    `gatsby-plugin-smoothscroll`,
     {
       resolve: 'gatsby-source-contentful',
       options: {

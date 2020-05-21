@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { Link } from 'gatsby'
 
 import logo from '../images/favicon.png';
 import HeaderWrapper from '../styles/layout/HeaderStyles';
 import '../styles/layout/hamburgers.css';
 import headerStyles from './header.module.scss'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'jquery/dist/jquery.min.js'
+import 'popper.js/dist/popper.min'
+import 'bootstrap/dist/js/bootstrap.min.js'
+
 
 const Header = () => {
     let [isScrolled, setIsScrolled] = useState(false);
@@ -20,29 +25,22 @@ const Header = () => {
           setIsScrolled((isScrolled = false));
         }
       });
-    }, []);
-/* 
-    const data = useStaticQuery(graphql`
-        query {
-            site {
-                siteMetadata {
-                    title
-                    }
-            }
-        }
-    `)
-    
-} */
+    }, []); 
+
+
+const [nav, showNav] = useState(false)
+
 return (
+
     <HeaderWrapper isScrolled={isScrolled}>
         <div className="navContainer">
         <div id="logo">
           <Link  to="/" aria-label="to home page">
-          <img className={headerStyles.logo} src={logo} alt="Logo" height='55' width='55' />
+          <img className={headerStyles.logo}  style={{borderRadius: '0%'}} style={{marginTop: '30px'}} src={logo} alt="Logo" height='55' width='55' />
           </Link>
         </div>
-
             <nav>
+              
             <ul>
             <li>
                 <Link activeClassName="activePage" to="/">
@@ -59,11 +57,15 @@ return (
                     Blog
                 </Link>
                 </li>
-                <li>
-                <Link activeClassName="activePage" to="/portfolio">
-                    Portfolio
-                </Link>
-                </li>
+                <li class="nav-item dropdown">
+                  <Link activeClassName="activePage" style={{marginTop: '8px'}} class="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Portfolio </Link>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <Link class="dropdown-item" to="/portfolio/margins/">Margins Magazine</Link>
+          <Link class="dropdown-item" to="/portfolio/techno/">Techno is not for everyone</Link>
+        </div>
+      </li>
+
                 <li>
                 <Link activeClassName="activePage" to="/contact">
                     Contact
@@ -71,28 +73,10 @@ return (
                 </li>
             </ul>
             </nav>
+            
         </div>
         </HeaderWrapper>
   );
 };
 
 export default Header;
-
-
-// return (
-//     <header className={headerStyles.header}>
-//         <h1>
-//             <Link className={headerStyles.title} to='/'>
-//                 {data.site.siteMetadata.title}
-//             </Link>
-//         </h1>
-//         <nav>
-//             <ul className={headerStyles.navList}>
-//                 <li><Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/'>Home</Link></li>
-//                 <li><Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/about'>About</Link></li>
-//                 <li><Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/blog'>Blog</Link></li>
-//                 <li><Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/contact'>Contact</Link></li>
-//             </ul>
-//         </nav>
-//     </header>
-// )
