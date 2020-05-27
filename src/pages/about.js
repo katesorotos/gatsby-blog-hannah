@@ -35,10 +35,10 @@ console.log(data)
                     <div class="row bio">
                         <div class="col-md-5">
                     
-                    <img src={ProfileImage} alt='Hannah May Baldwin' style={{float: 'left'}}/>
+                    <img src={ProfileImage} alt='Hannah May Baldwin' style={{float: 'left', paddingBottom: '20px'}}/>
                     </div>
 
-                    <div class="col-md-7">
+                    <div class="col-md-7 content">
                     <h2>Hi, I'm Hannah</h2>
 
                     {data.allMarkdownRemark.edges.map((edge) => {

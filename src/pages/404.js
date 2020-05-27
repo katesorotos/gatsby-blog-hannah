@@ -10,11 +10,14 @@ const NotFound = () => {
         <Layout>
             <Head title="404"/>
             <PageWrapper>
-            <header>Page not found</header>
-            <p><Link to='/'>Home</Link></p>
+                <div class="error">
+            <h1>404</h1> 
+            <h2>PAGE NOT FOUND</h2>
+            <Link to='/'><p><strong>HOME</strong></p></Link>
+                </div>
             </PageWrapper>
         </Layout>
-    )
+    ) 
 }
 
 export default NotFound;

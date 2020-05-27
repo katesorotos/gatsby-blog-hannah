@@ -76,7 +76,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
         const previous = index === 0 ? null : posts[index - 1].node
         const next = index === posts.length - 1 ? null : posts[index + 1].node
 
-    res.data.allContentfulPost.edges.forEach((edge, index,  next, previous) => {
+    res.data.allContentfulPost.edges.forEach((edge, index) => {
         createPage({
             component: blogTemplate,
             path: edge.node.slug,
@@ -90,6 +90,20 @@ module.exports.createPages = async ({ graphql, actions }) => {
     })
 }
 
+const { createFilePath } = require('gatsby-source-filesystem');
+
+exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
+	const { createNodeField } = boundActionCreators;
+
+	if (node.internal.type === `ContentfulPost`) {
+		const value = createFilePath({ node, getNode });
+		createNodeField({
+			name: `slug`,
+			node,
+			value,
+		});
+	}
+};
 
  /* ---- MARKDOWN
 

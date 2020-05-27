@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import MobileNavWrapper from '../styles/mobileNavStyles';
 import Hamburger from './hamburger';
 
+
 const MobileNav = ({ mobileNavIsOpen, action }) => {
   return (
     <MobileNavWrapper isOpen={mobileNavIsOpen}>
@@ -34,6 +35,7 @@ const MobileNav = ({ mobileNavIsOpen, action }) => {
                     <Link activeClassName="activePage" style={{marginTop: '10px'}} class="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Portfolio </Link>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <Link class="dropdown-item disabled" to="/portfolio/covid19/" tabindex="-1" aria-disabled="true">Covid 19</Link>
             <Link class="dropdown-item" to="/portfolio/margins/">Margins Magazine</Link>
             <Link class="dropdown-item" to="/portfolio/techno/">Techno is not for everyone</Link>
           </div>
@@ -58,3 +60,4 @@ MobileNav.propTypes = {
 };
 
 export default MobileNav;
+

@@ -7,12 +7,15 @@ if (process.env.NODE_ENV !== 'production') {
   dotenv.config()
 }
 
+
 module.exports = {
   siteMetadata: {
     title: 'Hannah May',
     owner: 'Hannah May Baldwin',
     developer: 'Kate Sorotos',
     email: 'hannahmaybaldwin@email.com',
+    twitterHandle: '@swashata',
+		url: 'https://swas.io',
     social: {
       instagram: 'hannahmaybaldwin',
     },

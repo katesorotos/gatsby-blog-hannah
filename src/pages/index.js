@@ -16,6 +16,7 @@ import bgImage1 from '../images/covid19.png';
 import bgImage2 from '../images/techno.png';
 import bgImage3 from '../images/margins.png';
 
+
 import 'bootstrap/dist/css/bootstrap.css'
 import 'jquery/dist/jquery.min.js'
 import 'popper.js/dist/popper.min'
@@ -94,25 +95,34 @@ const indexPage = () => {
           <h1>Portfolio of Work</h1>
           <p>Past | Present | Future</p>
 
+
           <div class="row"> 
             <div class="column"> 
+            <div class="responsive gallery">
             <div>
-              <Link to="/"><img src={bgImage1} alt="Card image"/></Link>
+              <Link to="/portfolio/covid19"><img src={bgImage1} alt="Card image"/></Link>
                 </div>   
+                </div>
             </div>
 
-          <div class="column">          
+          <div class="column">    
+          <div class="responsive gallery">
             <div>
               <Link to="/portfolio/techno"><img src={bgImage2} alt="Card image"/></Link>
               </div>
+              </div>
           </div>
 
-          <div class="column">          
+          <div class="column">    
+          <div class="responsive gallery">      
             <div>
               <Link to="/portfolio/margins"><img src={bgImage3} alt="Card image"/></Link>
               </div>
+              </div>
           </div>
-            </div>
+            </div> 
+
+          <div class="clearfix"></div> 
 
         </div>
 

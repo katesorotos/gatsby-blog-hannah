@@ -18,15 +18,15 @@ const PrevNext = (props) => {
             >
                 {previous && 
                 <li class="previous">
-                    <Link to={previous.slug}>
-                    <strong>← Previous Post</strong>{" "} <br/>
+                    <Link style= {{color: '#343a40'}} to={previous.slug}>
+                    <span><strong>← Previous Post</strong></span>{" "} <br/>
                     {previous.title}
                     </Link></li>}
 
                 {next && 
                 <li class="next">
-                    <Link to={next.slug}>
-                    <strong>Next Post → </strong>{" "} <br/> 
+                    <Link style= {{color: '#343a40'}} to={next.slug}>
+                    <span><strong>Next Post → </strong></span>{" "} <br/> 
                     {next.title}
                     </Link></li>}
             </ul>

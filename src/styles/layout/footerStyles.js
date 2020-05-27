@@ -12,13 +12,36 @@ const FooterWrapper = styled.footer`
   align-items: center;
 
   a {
-    color: #f39b9b;
+    color: #857885;
   }
   
   a:hover {
-    color: #343a40;
+    color: #f39b9b;
   }
 
+  .stackIcons {
+    padding: 25px 15px 15px;
+    width: 100%;
+    max-width: 400px;
+    ul {
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      li {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+          img {
+            height: auto;
+            width: 40px;
+          }
+        }
+      }
+    }
+  }
 
   span {
     display: block;
