@@ -1,5 +1,16 @@
 const path = require('path')
 
+// exports.onCreateWebpackConfig = ({
+//     actions,
+//   }) => {
+//     const { setWebpackConfig } = actions;
+//     setWebpackConfig({
+//       externals: {
+//         jquery: 'jQuery', 
+//       }
+//     })
+//   }
+
 /* exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
     const blogPost = path.resolve('./src/templates/blog.js')
@@ -97,13 +108,30 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
 
 	if (node.internal.type === `ContentfulPost`) {
 		const value = createFilePath({ node, getNode });
-		createNodeField({
+        
+        createNodeField({
 			name: `slug`,
 			node,
 			value,
 		});
 	}
 };
+
+// exports.onCreateNode = ({ node, getNode, actions }) => {
+//     const { createNodeField } = actions
+    
+//       if (node.internal.type === "MarkdownRemark" && node.fields.sourceName
+//        === "blog") {
+//         const slug = createFilePath({ node, getNode, basePath: "posts" })
+//         console.log('slug :', slug)
+//         createNodeField({
+//           node,
+//           name: "slug",
+//           value: slug
+//         })
+//       }
+      
+//     } 
 
  /* ---- MARKDOWN
 
