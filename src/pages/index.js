@@ -97,32 +97,21 @@ const indexPage = () => {
 
 
           <div class="row"> 
+
             <div class="column"> 
-            <div class="responsive gallery">
-            <div>
-              <Link to="/portfolio/covid19"><img src={bgImage1} alt="Card image"/></Link>
-                </div>   
+              <Link to="/portfolio/covid19"><img class="center" src={bgImage1} alt="Card image"/></Link>  
                 </div>
+
+          <div class="column">    
+              <Link to="/portfolio/techno"><img class="center" src={bgImage2} alt="Card image"/></Link>
             </div>
 
-          <div class="column">    
-          <div class="responsive gallery">
-            <div>
-              <Link to="/portfolio/techno"><img src={bgImage2} alt="Card image"/></Link>
-              </div>
-              </div>
-          </div>
 
           <div class="column">    
-          <div class="responsive gallery">      
-            <div>
-              <Link to="/portfolio/margins"><img src={bgImage3} alt="Card image"/></Link>
+              <Link to="/portfolio/margins"><img class="center" src={bgImage3} alt="Card image"/></Link>
               </div>
-              </div>
-          </div>
+
             </div> 
-
-          <div class="clearfix"></div> 
 
         </div>
 

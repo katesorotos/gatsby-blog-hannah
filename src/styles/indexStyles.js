@@ -70,7 +70,46 @@ const IndexPageWrapper = styled.div`
     justify-content: top;
     margin-top: 50px;
     text-align: center;
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 15px;
+    }
+    
+    .column {
+      flex: 33.3%;
+      max-width: 33.3%;
+      padding: 0 10px;
+    }
+    
+    .column img {
+      margin-top: 8px;
+      vertical-align: middle;
+      width: 100%;
+      height: 65vh;
+  
+    }
   }
+
+  @media screen and (max-width: 800px) {
+    #portfolioOfWork {
+      height: 250vh;
+      .column {
+        max-width: 100%;
+      }
+      .row {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height:100%;
+        width: 100%;
+      }
+  }
+}
+
+
+
   
   #quote {
     height: 50vh;

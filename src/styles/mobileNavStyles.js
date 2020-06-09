@@ -25,7 +25,7 @@ const MobileNavWrapper = styled.div`
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 6;
   }
-  #mobileMenu {
+  #mobileMenu { 
     color: black;
     background-color: white;
     position: fixed;
@@ -81,15 +81,23 @@ const MobileNavWrapper = styled.div`
             color: #857885;
           }
           .dropdown-menu {
-            // background-color: #F0B7B3;
-            // background-opacity: 0.5;
             border: none;
           }
           .dropdown-item {
+            color: black;
             padding: 5px;
             font-size: .9rem;
-            
           }
+          .dropdown-menu {
+            .activePage {
+              // text-shadow: .5px .5px 1px #000000;
+              text-decoration: underline;
+              color: black;
+              border-bottom: none;
+              font-size: .9rem;
+              }
+          }
+
         }
         
       }

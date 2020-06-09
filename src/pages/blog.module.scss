@@ -28,6 +28,15 @@
         background-color: #f39b9b;
         color: white;
         margin-left: 10px;
-    }
+        border-radius: 4px;
+        border: none;
+        transition-duration: 0.4s;
+   }
+    button:hover {
+        background-color: pink;
+        color: white;
+        }
+
+   
 }
 

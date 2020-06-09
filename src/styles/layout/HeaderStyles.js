@@ -90,7 +90,12 @@ const HeaderWrapper = styled.header`
           .dropdown-item {
             padding: 5px;
             font-size: .9rem;
-            
+          }
+          .dropdown-menu {
+            .activePage {
+              border-bottom: none;
+              font-size: .9rem;
+              }
           }
         }
       }

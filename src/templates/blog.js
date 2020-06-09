@@ -76,7 +76,7 @@ class BlogPostContentfulTemplate extends React.Component {
                     <Bio/>
                      {documentToReactComponents(post.body.json, options)}
                      <PrevNext previous={previous && previous.node} next={next && next.node} />
-                     <Share/>
+                     {/* <Share/> */}
                 </BlogPostPageWrapper>
         </Layout>
         )
