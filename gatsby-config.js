@@ -7,8 +7,12 @@ if (process.env.NODE_ENV !== 'production') {
   dotenv.config()
 }
 
+module.exports = {
+  
+}
 
 module.exports = {
+  pathPrefix: "/gatsby-blog-hannah",
   siteMetadata: {
     title: 'Hannah May',
     owner: 'Hannah May Baldwin',
