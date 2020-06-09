@@ -34,7 +34,8 @@ module.exports = {
       options: {
         spaceId: 'gh2sg2ozxgsh',
         accessToken: 'zOUiOTrfdR4IrosdRndCmsSy5bylZ-u4414Whv8t7b0',
-        // acessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        acessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
       },
     },
     'gatsby-plugin-sass',
